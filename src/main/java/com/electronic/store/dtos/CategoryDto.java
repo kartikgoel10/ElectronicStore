@@ -1,7 +1,7 @@
 package com.electronic.store.dtos;
 
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,8 +16,8 @@ public class CategoryDto {
 
 	private String categoryId;
 
-	@NotBlank
-	@Min(value = 4, message = "title length must be minimum of 4 characters ")
+	@NotBlank(message = "title is required")
+	@Size(min = 4, message = "title length must be minimum of 4 characters ")
 	private String title;
 
 	@NotBlank(message = "description cannot be blank")
